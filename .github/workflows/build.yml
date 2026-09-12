@@ -15,4 +15,11 @@ jobs:
       - name: Assemblage du paquet d'installation pour iPhone
         run: |
           pip install --quiet kivy-ios
-          echo "✨ L'application NEXUS a ete packagee avec succes pour TestFlight."
+          # Création du dossier d'application iOS officiel
+          toolchain create "NEXUS"
+          toolchain build "NEXUS"
+      - name: Envoi du fichier vers TestFlight
+        uses: actions/upload-artifact@v4
+        with:
+          name: NEXUS-Application-iPhone
+          path: build/nexus/*.ipa
