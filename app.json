@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "NEXUS",
+    "slug": "nexus-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "https://githubusercontent.com",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.nexusapp.sec"
+    }
+  }
+}
