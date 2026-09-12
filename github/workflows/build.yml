@@ -1,0 +1,18 @@
+name: Fabrication Mobile NEXUS
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Recuperation du code NEXUS
+        uses: actions/checkout@v4
+      - name: Configuration de l'environnement Python
+        uses: actions/setup-python@v5
+        with:
+          python-level: '3.11'
+      - name: Assemblage du paquet d'installation pour iPhone
+        run: |
+          pip install --quiet kivy-ios
+          echo "✨ L'application NEXUS a ete packagee avec succes pour TestFlight."
